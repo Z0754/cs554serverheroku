@@ -45,11 +45,6 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "com.example.cs554serverheroku.Cs554serverherokuApplication"
-    }
+springBoot {
+    mainClass.set("com.example.cs554serverheroku.serverApplicationKt")
 }
-
-springBoot { mainClass.set("com.example.cs554serverheroku.Cs554serverherokuApplicationKt") }

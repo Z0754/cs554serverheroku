@@ -5,13 +5,11 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.data.repository.query.ReturnedType
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*
-import kotlin.random.Random
 
 @SpringBootApplication
-class Cs554serverherokuApplication
+class serverApplication
 
 @Serializable
 data class Component(val id: String, val variant: String, val expiry: String, val itemDataModel: ItemDataModel)
@@ -84,7 +82,7 @@ var page01_new = Layout("1", "6000", listOf(
 
 fun main(args: Array<String>) {
     layout_dict["1"] = page01
-    runApplication<Cs554serverherokuApplication>(*args)
+    runApplication<serverApplication>(*args)
 }
 
 @RestController
