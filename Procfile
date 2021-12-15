@@ -1,1 +1,1 @@
-web: ./build/install/cs554serverheroku/bin/cs554serverheroku
+web: java -jar build/libs/kotlin-api.jar --server.port=$PORT
