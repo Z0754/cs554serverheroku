@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/cs554serverheroku-0.0.1-SNAPSHOT.jar
+web: java -jar build/libs/kotlin-api.jar --server.port=$PORT
