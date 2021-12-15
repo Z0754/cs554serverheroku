@@ -1,0 +1,1 @@
+web: ./build/install/cs554serverheroku/bin/cs554serverheroku
