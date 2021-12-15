@@ -16,7 +16,7 @@ data class Component(val id: String, val variant: String, val expiry: String, va
 @Serializable
 data class Layout(val pageID: String, val expiry: String, val components: List<Component>)
 @Serializable
-data class ItemDataModel(val id: String, var text: String, val color:String, val itemName: String, val imageURL:String,
+data class ItemDataModel(val id: String, var text: String, var color:String, val itemName: String, val imageURL:String,
                          val iconKey: String, val action: String, val payload: List<String>)
 @Serializable
 data class DataModelUpdateRequest(val pageID: String, val id: String)
@@ -153,7 +153,12 @@ class ItemModelUpdate {
             val toUpdate = layout_dict[update_request.pageID]
             for (c in toUpdate!!.components){
                 if (c.itemDataModel.id == update_request.id){
-                    c.itemDataModel.text += " updated"
+                    when(c.itemDataModel.color){
+                        "red" -> c.itemDataModel.color = "green"
+                        "green" -> c.itemDataModel.color = "blue"
+                        "blue" -> c.itemDataModel.color = "red"
+                    }
+
                     break
                 }
             }
